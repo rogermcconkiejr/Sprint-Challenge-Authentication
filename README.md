@@ -40,11 +40,23 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] What is the purpose of using _sessions_?
 
+Sessions are used to allow a server to store information about a client.  A common way to use that information is to then authenticate that user so they don’t have to re-enter their credentials every time they want to access a page.
+
 - [ ] What does bcrypt do to help us store passwords in a secure manner.
+
+Bcrypt is a library that allows us to hash passwords, and then store them.  This keeps our passwords much more secure because if an attacker was able to get into our user data base, they would not be able to see the actual password of the user, they would only be able to see its hashed version.  
 
 - [ ] What does bcrypt do to slow down attackers?
 
+Bcrypt uses a key derivation function, what this does is add time to our security algorithm by adding hashing rounds (the number of times the password gets hashed.). This makes it more difficult for attackers to guess passwords because they would need to know how many rounds were used to generate the hash.
+
 - [ ] What are the three parts of the JSON Web Token?
+
+The Three parts of a JSON Web Token are the header, the payload, and the signature.
+-The header contains the algorithm and token type.
+-The payload includes claims (like permissions for the user and any other data we’d like to pass between the server and the client.)
+-The signature contains the secret, which confirms that the token will not have been tampered with by anyone who does not know the secret.
+
 
 ## Minimum Viable Product
 

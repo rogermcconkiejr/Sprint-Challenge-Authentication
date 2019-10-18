@@ -23,3 +23,26 @@ describe('Register /api/auth/register', () => {
     });
   });
 
+
+  test('Register', async function() {
+    beforeEach( async ()=>{
+        await db('users').truncate();
+    })
+    Users.add({ username: 'Test', password: "testpass2" });        
+    request(server)
+        .post('/api/auth/register')
+        .expect('Content-Type', /json/)
+        .expect(200, "ok")
+
+});
+
+test('Login', async function() {
+    beforeEach( async ()=>{
+        await db('users').truncate();
+    })
+    Users.add({ username: 'Test4', password: "testpass2" });        
+    request(server)
+        .post('/api/auth/login')
+        .expect('Content-Type', /json/)
+        .expect(200, "ok")
+});

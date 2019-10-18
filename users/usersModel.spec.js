@@ -51,5 +51,5 @@ describe('register user', ()=>{
                         user = await UserModel.add({ username: 'Testing', password: 'testingpass' });
                         expect (user.password).toBeTruthy();
                 
-                    })
+                    }) 
                 })
